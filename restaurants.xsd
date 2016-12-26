@@ -1,0 +1,30 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="restaurants">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="restaurant" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="name"/>
+              <xs:element type="xs:string" name="address"/>
+              <xs:element type="xs:float" name="lat"/>
+              <xs:element type="xs:float" name="lng"/>
+              <xs:element type="xs:string" name="type"/>
+              <xs:element name="food" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="class"/>
+                    <xs:element type="xs:string" name="name"/>
+                    <xs:element type="xs:string" name="price"/>
+                    <xs:element type="xs:string" name="description"/>
+                    <xs:element type="xs:short" name="calories" minOccurs="0"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
