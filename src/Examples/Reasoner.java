@@ -14,13 +14,6 @@ import Examples.Restaurants.Restaurant;
 
 public class Reasoner {
 
-	// The main Class Object holding the Domain knowledge
-
-	// Generate the classes automatically with: Opening a command console and
-	// type:
-	// Path to YOUR-PROJECTROOT-IN-WORKSPACE\xjc.bat yourschemaname.xsd -d src
-	// -p yourclasspackagename
-
 	public Restaurants therestaurant; //This is a candidate for a name change
 
 	public SimpleGUI Myface;
@@ -29,13 +22,11 @@ public class Reasoner {
 	public List restaurantList = new ArrayList();    //This is a candidate for a name change
 	public List<Restaurants.Restaurant> totalrestaurant = new ArrayList();  //This is a candidate for a name change
 	public List<Restaurants.Restaurant.Food> foodList = new ArrayList(); //This is a candidate for a name change
-	public List theLendingList = new ArrayList(); //This is a candidate for a name change
 	public List theRecentThing = new ArrayList(); 
 
 	public Vector<String> restaurantsyn = new Vector<String>();  //This is a candidate for a name change
 	public Vector<String> foodsyn = new Vector<String>();
 	
-	public Vector<String> lendingsyn = new Vector<String>();  //This is a candidate for a name change
 	public Vector<String> recentobjectsyn = new Vector<String>();
 
 	public String questiontype = "";         // questiontype selects method to use in a query
@@ -81,8 +72,6 @@ public class Reasoner {
 		foodsyn.add("foods");
 		foodsyn.add("foodsmenu");
 		foodsyn.add("foodmenu");
-		lendingsyn.add(" lending");   //All of the following is a candidate for a name change
-
 		recentobjectsyn.add(" this");   //All of the following is a candidate for a name change
 		recentobjectsyn.add(" that");
 		recentobjectsyn.add(" him");
@@ -304,7 +293,7 @@ public class Reasoner {
 				||(questiontype == "intent" && classtype == theRecentThing)) {
 
 			// Can I lend the book or not (Can I lent "it" or not)
-			answer=("You "+ BookAvailable(classtype, input));
+			answer=("You "+ restaurantAvailable(classtype, input));
 			Answered = 1; // An answer was given
 		}
 
@@ -389,7 +378,7 @@ Answered = 1; // An answer was given
 	
 	// Answer a question of the "Is a book or "it (meaning a book) available ?" kind
 
-	public String BookAvailable(List thelist, String input) {
+	public String restaurantAvailable(List thelist, String input) {
         return "";
         } 
 		
@@ -437,21 +426,7 @@ Answered = 1; // An answer was given
 		
 		
 			
-		/*if (thelist == theCatalogList) {                               //This is a candidate for a name change
-			for (int i = 0; i < thelist.size(); i++) {
-				Catalog curcat = (Catalog) thelist.get(i);             //This is a candidate for a name change
-				listemall = listemall 
-						+ "<li>" + (curcat.getName() + "</li>");      //This is a candidate for a name change
-			}
-		}
 		
-		if (thelist == theLendingList) {                               //This is a candidate for a name change
-			for (int i = 0; i < thelist.size(); i++) {
-				Lending curlend = (Lending) thelist.get(i);             //This is a candidate for a name change
-				listemall = listemall + "<li>" 
-						+ (curlend.getIsbn() + "</li>");                //This is a candidate for a name change
-			}
-		}*/
 		
 		listemall += "</ul>";
 

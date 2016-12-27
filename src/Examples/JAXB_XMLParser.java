@@ -14,13 +14,10 @@ package Examples;
 
 
 import java.io.InputStream;
-import java.io.StringReader;
 
 import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
-import javax.xml.transform.stream.StreamSource;
 //This is a candidate for a name change because you wont deal with a library any more in your conversion
 
 public class JAXB_XMLParser {
@@ -29,7 +26,7 @@ public class JAXB_XMLParser {
 	private Unmarshaller unmarshaller = null;   // unmarshall = genrate objects from an xml file												
 	
 	// This is a candidate for a name change because you wont deal with a library any more in your conversion
-	private Restaurants mynewlib = null;            // the main object containing all data
+	private Restaurants mynewresta = null;            // the main object containing all data
 
 	public JAXB_XMLParser() {
 
@@ -49,16 +46,13 @@ public class JAXB_XMLParser {
 			
 			Object xmltoobject = unmarshaller.unmarshal(fileinputstream);
 
-			if (mynewlib == null) {
+			if (mynewresta == null) {
 
-				// generate the mynewlib object that conatins all info from the xml document
-				
-				
-				mynewlib = (Restaurants)xmltoobject;
+					mynewresta = (Restaurants)xmltoobject;
 				// The above (Library) is a candidate for a name change because you wont deal with 
 				// a library any more in your conversion
 				
-				return mynewlib; // return Library Objekt
+				return mynewresta; // return Library Objekt
 			}
 		} // try
 
